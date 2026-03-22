@@ -4,7 +4,7 @@ import { serverConfig } from "@/lib/settings"
 import axios from "axios"
 
 export const api = axios.create({
-  baseURL: `${serverConfig.host}:${serverConfig.port}`,
+  baseURL: `${serverConfig.url}`,
   timeout: 30000,
 })
 
