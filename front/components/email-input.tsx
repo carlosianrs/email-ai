@@ -64,7 +64,7 @@ export function EmailInput({ isProcessing, setInputData }: EmailInputProps) {
             <div className="space-y-2">
               <Textarea
                 placeholder="Cole o conteúdo do email aqui..."
-                className="min-h-45 resize-none text-base leading-relaxed"
+                className="min-h-45 resize-none text-sm leading-relaxed md:text-base"
                 value={emailContent}
                 onChange={({ target }) => setEmailContent(target.value)}
                 maxLength={2000}

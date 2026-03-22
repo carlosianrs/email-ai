@@ -5,7 +5,7 @@ import { ClassificationResults } from "@/components/classification-results";
 import { EmailInput } from "@/components/email-input";
 import { LoadingResults } from "@/components/loading-results";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
-import { BarChart3, Brain, Zap } from "lucide-react";
+import { BarChart3, Brain, Timer, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -40,20 +40,21 @@ export default function Page() {
     <div className="bg-background">
       <main className="space-y-4">
         <div className="mb-8 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-3xl text-balance">
+          <h2 className="text-2xl font-bold tracking-tight md:text-3xl text-balance">
             Automatize a analise e geracao de respostas
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-md text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-2xl text-sm md:text-md text-muted-foreground">
             Nosso sistema de inteligência artificial classifica automaticamente emails recebidos 
             e gera respostas profissionais, economizando tempo e aumentando a produtividade.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           {[
-            { icon: Brain, title: "Análise Inteligente", desc: "ML avançado" },
-            { icon: Zap, title: "Processamento Rápido", desc: "Segundos" },
-            { icon: BarChart3, title: "Alta Precisão", desc: "92%+ confiança" },
+            { icon: Brain, title: "IA Avançada", desc: "Entende contexto real" },
+            { icon: Zap, title: "Ultra Rápido", desc: "Resultados em segundos" },
+            { icon: Timer, title: "Automação", desc: "Menos tarefas manuais" },
+            { icon: BarChart3, title: "Alta Precisão", desc: "92%+ confiança" }
           ].map((item, index) => (
             <Card key={index} className="p-4 rounded-xl bg-card border border-border/50 shadow-sm hover:shadow-md transition-shadow">
               <CardContent className="flex flex-col items-center text-center">
