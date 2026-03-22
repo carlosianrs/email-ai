@@ -1,6 +1,6 @@
 'use client'
 
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useRef, useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
@@ -16,6 +16,8 @@ export function EmailInput({ isProcessing, setInputData }: EmailInputProps) {
   const [emailContent, setEmailContent] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
+
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault()
@@ -38,11 +40,15 @@ export function EmailInput({ isProcessing, setInputData }: EmailInputProps) {
   }
 
   const handleFileSelect = () => {
-    document.getElementById("fileInput")?.click();
+    fileInputRef.current?.click();
   }
 
   const removeFile = () => {
     setFile(null);
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   }
 
   return (
@@ -104,6 +110,7 @@ export function EmailInput({ isProcessing, setInputData }: EmailInputProps) {
             </div>
 
             <input
+              ref={fileInputRef}
               type="file"
               accept=".txt,.pdf"
               className="hidden"
