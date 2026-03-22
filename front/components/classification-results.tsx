@@ -30,7 +30,7 @@ export function ClassificationResults({ result }: ClassificationResultsProps) {
               <Target className="h-5 w-5 text-primary" />
               Classificação
             </CardTitle>
-            <div className={`${result?.category == 'Produtivo' ? 'bg-success' : 'bg-failed'} rounded-sm text-success-foreground hover:bg-success/90 px-3 py-1 text-sm font-medium`}>
+            <div className={`${result?.category == 'Produtivo' ? 'bg-success' : 'bg-failed'} rounded-sm text-success-foreground px-3 py-1 text-sm font-medium`}>
               <span className="text-white">{result?.category}</span>
             </div>
           </div>
