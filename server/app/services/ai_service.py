@@ -22,8 +22,9 @@ Regras:
 
 Responda APENAS em JSON:
 {{
-  "categoria": "Produtivo ou Improdutivo",
-  "resposta": "texto"
+  "category": "Produtivo ou Improdutivo",
+  "message": "texto",
+  "reason": "Motivo de ter sido classificada a categoria"
 }}
 
 Email:

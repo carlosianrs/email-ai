@@ -10,5 +10,6 @@ class EmailRequest(BaseModel):
         return value
 
 class EmailResponse(BaseModel):
-    categoria: str
-    resposta: str
+    category: str
+    message: str
+    reason: str
